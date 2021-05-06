@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hashtagcafe">
-
+        <activity android:name=".storeInfo_modify"></activity>
+        <activity android:name=".storeInfo_map" />
+        <activity android:name=".storeInfo_main" />
         <activity android:name=".splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,8 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".map" />
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="com.naver.maps.map.haex8ay584"

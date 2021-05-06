@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/hashtagcafe.iml" filepath="$PROJECT_DIR$/.idea/hashtagcafe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cafe_app.hashtagcafe.iml" filepath="$PROJECT_DIR$/.idea/modules/cafe_app.hashtagcafe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/hashtagcafe.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/hashtagcafe.app.iml" />
     </modules>
   </component>
 </project>

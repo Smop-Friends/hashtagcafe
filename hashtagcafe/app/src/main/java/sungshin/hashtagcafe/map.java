@@ -6,9 +6,12 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.naver.maps.map.LocationTrackingMode;
 import com.naver.maps.map.MapFragment;
@@ -28,6 +31,8 @@ public class map extends AppCompatActivity implements OnMapReadyCallback {
     FragmentManager fm;
     MapFragment mapFragment;
 
+    //임시버튼
+    Button yejinBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +50,17 @@ public class map extends AppCompatActivity implements OnMapReadyCallback {
         // ...
         locationSource =
                 new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
+
+        //임시버튼 페이지 연결입니다-예진
+        yejinBtn= (Button)findViewById(R.id.ha);
+        yejinBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), storeInfo_main.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

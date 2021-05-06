@@ -54,17 +54,43 @@
             app:srcCompat="@drawable/jjimnb" />
 
     </LinearLayout>
+    <!-- 임시버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/ha"
+            android:text="예진"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/chee"
+            android:text="소은"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/kang"
+            android:text="민지"/>
+    </LinearLayout>
     <!--메인화면-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <!--네이버 지도-->
+        <!--네이버 지도--><!--여기 높이 수정했음 -임시버튼(예진)-->
         <fragment android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="500dp"
             android:layout_margin="20dp"
             android:id="@+id/map"
             android:name="com.naver.maps.map.MapFragment" />
-
     </LinearLayout>
 </LinearLayout>

@@ -28,22 +28,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e85ce29-0634-4d9d-8a9c-13556b89730b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_map.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_modify.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/activity_store_info_map.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/keep.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/menu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/pp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_info_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_info_map.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_info_modify.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/map.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/splash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

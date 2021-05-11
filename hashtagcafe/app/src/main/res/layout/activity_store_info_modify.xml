@@ -60,6 +60,7 @@
                 android:textSize="30sp"
                 android:layout_weight="1"
                 />
+
             <EditText
                 android:id="@+id/location"
                 android:layout_width="200dp"
@@ -173,15 +174,15 @@
             android:layout_gravity="center"
             android:gravity="left"
             android:layout_margin="10dp">
+
             <TextView
 
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="카페 사진 등록하기"
                 android:layout_marginBottom="10dp"
+                android:text="카페 사진 등록하기"
                 android:textColor="@color/black"
-                android:textSize="30sp"
-                />
+                android:textSize="30sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -218,18 +219,275 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_gravity="center"
             android:gravity="left"
             android:layout_margin="10dp">
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="해쉬태그 내용자리"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="카페 정보 선택"
+                    android:textSize="30sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="  (해당되는 정보 선택하기)"
+                    android:textSize="15sp"
+                    />
 
-                android:textSize="30sp"
-                />
+            </LinearLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:rowCount="20"
+                android:layout_margin="5dp"
+                android:layout_gravity="left|top"
+                android:gravity="center"
+                android:textSize="25sp">
+                <TextView
+                    android:id="@+id/checkCovid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="fill_horizontal"
+                    android:text="● 코로나 관련 사항"/>
+
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_covid19_1"
+                    android:visibility="gone"
+                    android:text="QR체크 여부"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_covid19_2"
+                    android:visibility="gone"
+                    android:text="출입 명부 작성"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_covid19_3"
+                    android:visibility="gone"
+                    android:text="수시 환기"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_covid19_4"
+                    android:visibility="gone"
+                    android:text="체온체크"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_covid19_5"
+                    android:visibility="gone"
+                    android:text="매장 소독"/>
+
+
+
+                <TextView
+                    android:id="@+id/checkInterior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="fill_horizontal"
+                    android:text="● 인테리어 관련 사항"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_interior_1"
+                    android:visibility="gone"
+                    android:text="테이블 5개 미만"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_interior_2"
+                    android:visibility="gone"
+                    android:text="테이블 10개이상"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_interior_3"
+                    android:visibility="gone"
+                    android:text="스터디 좌석 마련"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_interior_4"
+                    android:visibility="gone"
+                    android:text="1인 좌석"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_interior_5"
+                    android:visibility="gone"
+                    android:text="대형테이블(5인좌석 이상)"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_interior_6"
+                    android:visibility="gone"
+                    android:text="포토존 마련"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_interior_7"
+                    android:visibility="gone"
+                    android:text="콘센트 자리 많음"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_interior_8"
+                    android:visibility="gone"
+                    android:text="루프탑"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_interior_9"
+                    android:visibility="gone"
+                    android:text="야외 좌석"/>
+
+                <TextView
+                    android:id="@+id/checkCafe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="fill_horizontal"
+                    android:text="● 매장 관련 사항"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_cafe_1"
+                    android:visibility="gone"
+                    android:text="24시 운영"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_cafe_2"
+                    android:visibility="gone"
+                    android:text="지하철역 부근"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_cafe_3"
+                    android:visibility="gone"
+                    android:text="반려동물 동반 가능"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_cafe_4"
+                    android:visibility="gone"
+                    android:text="오전 8시 이전 오픈"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_cafe_5"
+                    android:visibility="gone"
+                    android:text="친환경 용기 사용"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_cafe_6"
+                    android:visibility="gone"
+                    android:text="배달 가능"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_cafe_7"
+                    android:visibility="gone"
+                    android:text="개인카페"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_cafe_8"
+                    android:visibility="gone"
+                    android:text="프렌차이즈 카페"/>
+                <TextView
+                    android:id="@+id/checkMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="fill_horizontal"
+                    android:text="● 메뉴 관련 사항"/>
+
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_menu_1"
+                    android:visibility="gone"
+                    android:text="브런치 카페"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_menu_2"
+                    android:visibility="gone"
+                    android:text="주류 판매"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_menu_3"
+                    android:visibility="gone"
+                    android:text="생과일 주스 판매"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_menu_4"
+                    android:visibility="gone"
+                    android:text="디저트 판매"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_menu_5"
+                    android:visibility="gone"
+                    android:text="전문 바리스타"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_menu_6"
+                    android:visibility="gone"
+                    android:text="디카페인 메뉴"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_menu_7"
+                    android:visibility="gone"
+                    android:text="우유 선택 가능"/>
+                <CheckBox
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/check_menu_8"
+                    android:visibility="gone"
+                    android:text="비건 메뉴"/>
+            </GridLayout>
+
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -241,7 +499,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="체크리스트 내용자리"
+                android:text="hashtag 내용자리"
 
                 android:textSize="30sp"
                 />

@@ -29,6 +29,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8e85ce29-0634-4d9d-8a9c-13556b89730b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_main.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_modify.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_modify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_info_modify.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_info_modify.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +68,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.-1093448235">
@@ -164,5 +167,24 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1236" height="163" key="GridCell.Tab.0.bottom" timestamp="1620757616205">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1236" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1620757616205" />
+    <state width="1236" height="163" key="GridCell.Tab.0.center" timestamp="1620757616205">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1236" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1620757616205" />
+    <state width="1236" height="163" key="GridCell.Tab.0.left" timestamp="1620757616205">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1236" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1620757616205" />
+    <state width="1236" height="163" key="GridCell.Tab.0.right" timestamp="1620757616205">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1236" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1620757616205" />
   </component>
 </project>

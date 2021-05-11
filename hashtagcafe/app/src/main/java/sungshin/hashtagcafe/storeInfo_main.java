@@ -31,6 +31,7 @@ public class storeInfo_main extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), storeInfo_modify.class);
+                //Intent intent = new Intent(getApplicationContext(), storeInfo_modify.class);
                 startActivity(intent);
             }
         });

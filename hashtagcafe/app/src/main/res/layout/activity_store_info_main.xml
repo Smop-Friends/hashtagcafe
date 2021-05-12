@@ -8,6 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@drawable/border_layout"
+        android:padding="15dp"
         android:layout_margin="20dp">
 
         <LinearLayout
@@ -18,32 +20,34 @@
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="100dp"
-                android:text="가게이름"
+                android:text="카페 이름"
+                android:padding="25dp"
                 android:layout_gravity="center"
                 android:gravity="left"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="40sp"
                 android:layout_weight="3"/>
 
             <LinearLayout
                 android:layout_width="100dp"
-                android:layout_height="150dp"
+                android:layout_height="100dp"
                 android:orientation="vertical"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_weight="1">
 
-                <Button
+                <ImageButton
                     android:id="@+id/modify"
                     android:layout_width="100dp"
-                    android:layout_height="80dp"
-                    android:drawablePadding="4dp"
-                    android:text="수정하기" />
-                <ImageButton
-                    android:layout_width="50dp"
                     android:layout_height="50dp"
-
-                    android:background="@drawable/keep" />
+                    android:drawablePadding="4dp"
+                   android:src="@drawable/modify" />
+                <ImageButton
+                    android:id="@+id/keep"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/fullheart" />
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -67,15 +71,17 @@
                 android:id="@+id/location"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="가게위치를 보여줍니다"
+                android:text="카페 위치"
+                android:padding="14dp"
                 android:textSize="25sp"
                 android:layout_weight="7"
                 />
-            <Button
+
+            <ImageButton
                 android:id="@+id/map"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:drawablePadding="4dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src ="@android:drawable/ic_menu_mapmode"
                 android:text="지도"
                 android:layout_weight="1"
                 />
@@ -99,7 +105,8 @@
                 android:id="@+id/time"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="영업시간을 보여줍니다"
+                android:paddingLeft="10dp"
+                android:text="영업시간"
                 android:layout_weight="7"
                 android:textSize="25sp"
                 />
@@ -112,15 +119,32 @@
             android:layout_gravity="center"
             android:gravity="left"
             android:layout_margin="5dp">
-            <TextView
-
-                android:layout_width="250dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="메뉴"
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/black"
-                android:textSize="30sp"
-                />
+                android:orientation="horizontal">
+                <TextView
+
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="메뉴"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    />
+                <ImageButton
+                    android:id="@+id/imgPlus"
+                    android:layout_width="72dp"
+                    android:layout_height="58dp"
+                    android:drawablePadding="4dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="right"
+                    android:src="@drawable/plus"
+
+                    />
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -137,21 +161,8 @@
                     android:layout_height="100dp"
                     android:src="@drawable/menu"
                     />
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/menu"
-                    />
-                <Button
-                    android:id="@+id/imgPlus"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:drawablePadding="4dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="right"
-                    android:text="더보기"
-                    />
+
+
             </LinearLayout>
 
         </LinearLayout>
@@ -202,46 +213,128 @@
                     android:textColor="@color/black"
                     android:textSize="30sp"
                     />
-                <Button
+                <ImageButton
                     android:id="@+id/pic"
-                    android:layout_width="150dp"
-                    android:layout_height="60dp"
+                    android:layout_width="130dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="left"
                     android:gravity="left"
                     android:layout_margin="5dp"
-                    android:text="사진리뷰 모아보기"
+                   android:src="@drawable/only_img_review"
+                    />
+                <ImageButton
+                    android:id="@+id/reviewPlus"
+                    android:layout_width="70dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="right"
+                   android:src="@drawable/plus"
                     />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/pp"
-                    />
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/pp"
-                    />
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/pp"
-                    />
-                <Button
-                    android:id="@+id/reviewPlus"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:drawablePadding="4dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="right"
-                    android:text="더보기"
-                    />
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/pp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp">
+                        <TextView
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:text="보라 수정구님"
+                            />
+                        <TextView
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="매장이 크고 좋아요"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/pp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:text="초록 수정구님"
+                            />
+                        <TextView
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="깨끗해요"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/pp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:text="파란 수정구님"
+                            />
+                        <TextView
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="커피가 맛있어요"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
 

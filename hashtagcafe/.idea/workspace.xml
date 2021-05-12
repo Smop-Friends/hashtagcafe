@@ -28,22 +28,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e85ce29-0634-4d9d-8a9c-13556b89730b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_map.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_modify.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/activity_store_info_map.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/keep.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/menu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/pp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_info_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_info_map.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_info_modify.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/empty_img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/emptyheart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/fullheart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/modify.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/only_img_review.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/plus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/border_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/edit_round.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/map.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/splash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_main.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_modify.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sungshin/hashtagcafe/storeInfo_modify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/activity_store_info_map.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/keep.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/menu.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/menu.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pp.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/pp.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_info_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_info_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_info_modify.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_info_modify.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +69,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -80,13 +88,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.-1093448235">
       <recent name="sungshin.hashtagcafe" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\cafe_app\hashtagcafe\app\src\main\res\drawable-v24" />
+      <recent name="D:\GitHub\cafe_app\hashtagcafe\app\src\main\res" />
       <recent name="D:\GitHub\cafe_app\hashtagcafe\app\src\main\res\drawable" />
     </key>
   </component>
@@ -179,5 +190,40 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="407" y="141" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1620764140815">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="407" y="141" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1620764140815" />
+    <state x="243" y="87" key="AndroidCreateResourceFileDialog" timestamp="1620767819922">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="243" y="87" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1620767819922" />
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1620767668078">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1620767668078" />
+    <state width="1236" height="63" key="GridCell.Tab.0.bottom" timestamp="1620769089943">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1236" height="63" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1620769089943" />
+    <state width="1236" height="63" key="GridCell.Tab.0.center" timestamp="1620769089943">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1236" height="63" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1620769089943" />
+    <state width="1236" height="63" key="GridCell.Tab.0.left" timestamp="1620769089942">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1236" height="63" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1620769089942" />
+    <state width="1236" height="63" key="GridCell.Tab.0.right" timestamp="1620769089943">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1236" height="63" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1620769089943" />
+    <state x="436" y="118" key="chooseDestDirectoryDialog" timestamp="1620769185607">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="436" y="118" key="chooseDestDirectoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1620769185607" />
   </component>
 </project>

@@ -1,0 +1,250 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:text="가게이름"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:layout_weight="3"/>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/modify"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:drawablePadding="4dp"
+                    android:text="수정하기" />
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+                    android:background="@drawable/keep" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            >
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="위치"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="가게위치를 보여줍니다"
+                android:textSize="25sp"
+                android:layout_weight="7"
+                />
+            <Button
+                android:id="@+id/map"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:drawablePadding="4dp"
+                android:text="지도"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="영업시간"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="영업시간을 보여줍니다"
+                android:layout_weight="7"
+                android:textSize="25sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:layout_margin="5dp">
+            <TextView
+
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="메뉴"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/menu"
+                    />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/menu"
+                    />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/menu"
+                    />
+                <Button
+                    android:id="@+id/imgPlus"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:drawablePadding="4dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="right"
+                    android:text="더보기"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="해쉬태그 내용자리"
+
+                android:textSize="30sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="체크리스트 내용자리"
+
+                android:textSize="30sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/review"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="리뷰"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    />
+                <Button
+                    android:id="@+id/pic"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:text="사진리뷰 모아보기"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/pp"
+                    />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/pp"
+                    />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/pp"
+                    />
+                <Button
+                    android:id="@+id/reviewPlus"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:drawablePadding="4dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="right"
+                    android:text="더보기"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

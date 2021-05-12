@@ -6,6 +6,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -23,6 +25,7 @@ import com.naver.maps.map.util.FusedLocationSource;
 
 import java.security.Permission;
 import java.security.Permissions;
+import java.util.ArrayList;
 
 public class map extends AppCompatActivity implements OnMapReadyCallback {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1000;
@@ -32,7 +35,19 @@ public class map extends AppCompatActivity implements OnMapReadyCallback {
     MapFragment mapFragment;
 
     //임시버튼
-    Button yejinBtn;
+    Button yejinBtn,minjiBtn;
+
+    // jenny start
+    // pass hashtag selected item to next activity from alert dialog
+    public static final String ITEM_SELECTED = "sungshin.hashtagcafe.ITEM_SELECTED";
+
+    // 변수 선언
+    Button mExplore;
+    String[] listItems;
+    boolean[] checkedItems;
+    ArrayList<Integer> mUserItems = new ArrayList<>();
+    // jenny end
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +76,27 @@ public class map extends AppCompatActivity implements OnMapReadyCallback {
                 startActivity(intent);
             }
         });
+
+        minjiBtn= (Button)findViewById(R.id.kang);
+        minjiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), review_main.class);
+                startActivity(intent);
+            }
+        });
+
+        // jenny start
+        // 위젯 대입
+        mExplore = (Button) findViewById(R.id.BtnExplore);
+
+        listItems = getResources().getStringArray(R.array.hashtag_list);
+        checkedItems = new boolean[listItems.length];
+
+        // 해시태그 선택 후, 선택결과에 따라 카페 목록 보여줌
+        ExploreHashtag();
+        // jenny end
+
     }
 
     @Override
@@ -96,4 +132,97 @@ public class map extends AppCompatActivity implements OnMapReadyCallback {
 
         Marker marker = new Marker();
     }
+
+    // jenny start
+    // 해시태그 선택 후, 선택결과에 따라 카페 목록 보여줌
+    private void ExploreHashtag(){
+        // multiple choice list dialog
+        mExplore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(map.this);
+                mBuilder.setTitle(R.string.dialog_title);
+
+                // User Onclick for the dialog
+                mBuilder.setMultiChoiceItems(listItems, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int position, boolean isChecked) {
+                        // if the item is checked
+//                      if (isChecked) {
+                        // and not part of the list
+//                          if (!mUserItems.contains(position)) {
+                        // add the item
+//                              mUserItems.add(position);
+//                          }
+//                      } else if (mUserItems.contains(position)) {
+//                          // else remove it
+//                          mUserItems.remove(position);
+//                      }
+
+                        if (isChecked){
+                            mUserItems.add(position);
+                        } else{
+                            mUserItems.remove((Integer.valueOf(position)));
+                        }
+
+                    }
+                });
+
+                mBuilder.setCancelable(false);
+
+                // OK button for positive
+                mBuilder.setPositiveButton(R.string.ok_label, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        String item = "";
+                        for (int i = 0; i < mUserItems.size(); i++){
+                            item = item + listItems[mUserItems.get(i)];
+                            if (i != mUserItems.size() - 1) {
+                                item = item + ", ";
+                            }
+                        }
+                        // not using
+                        // mItemSelected.setText(item);
+
+                        // 다음 페이지 넘어가기 카페 목록 서치 확인
+                        Intent intent = new Intent(map.this, TagSearchList.class);
+                        // pass hashtag selected item to next activity from alert dialog
+                        intent.putExtra(ITEM_SELECTED, item);
+                        startActivity(intent);
+
+                    }
+                });
+
+                // Dismiss button for negative
+                mBuilder.setNegativeButton(R.string.dismiss_label, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                // Clear All button for neutral
+                mBuilder.setNeutralButton(R.string.clear_all_label, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        for (int i = 0; i < checkedItems.length; i++) {
+                            checkedItems[i] = false;
+                            // clear the items
+                            mUserItems.clear();
+                            // not using
+                            // start from the empty text
+                            // mItemSelected.setText("");
+                        }
+                    }
+                });
+
+                AlertDialog mDialog = mBuilder.create();
+                // Show the dialog
+                mDialog.show();
+
+            }
+        });
+    }
+    // jenny end
+
 }

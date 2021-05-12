@@ -68,12 +68,19 @@
             android:layout_margin="10dp"
             android:id="@+id/ha"
             android:text="예진"/>
+
+        <!-- jenny -->
         <Button
+            android:id="@+id/BtnExplore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:id="@+id/chee"
-            android:text="소은"/>
+            android:text="@string/explore"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_button"
+            android:textColor="#0000A0"
+            android:textSize="12sp"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

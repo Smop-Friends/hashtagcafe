@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">hashtagcafe</string>
+
+    <!-- jenny -->
+    <string name="explore">Explore</string>
+    <string name="dialog_title">Select Hashtag</string>
+    <string name="ok_label">OK</string>
+    <string name="dismiss_label">Dismiss</string>
+    <string name="clear_all_label">Clear All</string>
+
+    <!-- jenny -->
+    <string-array name="hashtag_list">
+        <item>24시간</item>
+        <item>콘센트</item>
+        <item>루프탑</item>
+        <item>야외</item>
+        <item>스터디</item>
+        <item>코로나 방역</item>
+        <item>브런치</item>
+        <item>SNS</item>
+        <item>지하철역 근처</item>
+        <item>반려동물 가능</item>
+        <item>청결</item>
+        <item>환경적인 포장용기</item>
+        <item>오픈 8시 이전</item>
+        <item>단체</item>
+    </string-array>
+
 </resources>

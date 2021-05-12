@@ -6,6 +6,8 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import sungshin.hashtagcafe.authentication.StartAuthActivity;
+
 public class splash extends AppCompatActivity {
 
     @Override
@@ -17,7 +19,7 @@ public class splash extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run(){
-                Intent intent = new Intent(getApplicationContext(), map.class);
+                Intent intent = new Intent(getApplicationContext(),  StartAuthActivity.class);
                 startActivity(intent);
                 finish();
             }

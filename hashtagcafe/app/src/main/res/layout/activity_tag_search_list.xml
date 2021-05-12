@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- jenny -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TagSearchList">
+
+    <!-- 해시태그 검색결과 보기 -->
+    <TextView
+        android:id="@+id/TVselected"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/tv_search_box"
+        android:drawableStart="@drawable/ic_search_box"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:text="해시태그 선택 결과"
+        android:textSize="16sp"
+        android:textColor="#A74AC7"
+        android:layout_margin="16dp"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit ="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:scrollHorizontally="true"
+        android:drawableLeft="@drawable/ic_search_box" />
+
+    <!-- 카페목록, 뒤로 돌아가기 버튼 -->
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카페 목록"
+            android:textSize="18sp"
+            android:textColor="#0000A0"
+            android:layout_margin="16dp"/>
+
+        <View
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/BtnGoBack"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_button"
+            android:text="뒤로가기"
+            android:textColor="#0000A0"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <!-- cafe list -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- start of cafe list -->
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/layout_border"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" >
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:background="#C0C0C0"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp" />
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:text="스타벅스 성신여대점"
+                        android:textSize="16sp"
+                        android:textColor="#0000A0"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_margin="4dp"
+                        android:text="커피전문점"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+
+                <Button
+                    android:textSize="12dp"
+                    android:textColor="#0000A0"
+                    android:background="@drawable/bg_button"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:text="상세보기"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+            <!-- 1개 리스트 끝, 다음부터가 두번째 -->
+
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/layout_border"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" >
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:background="#C0C0C0"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp" />
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:text="스타벅스 성신여대정문"
+                        android:textSize="16sp"
+                        android:textColor="#0000A0"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_margin="4dp"
+                        android:text="커피전문점"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+
+                <Button
+                    android:textSize="12dp"
+                    android:textColor="#0000A0"
+                    android:background="@drawable/bg_button"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:text="상세보기"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+            <!-- 2개 리스트 끝, 다음부터가 세번째 -->
+
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/layout_border"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" >
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:background="#C0C0C0"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp" />
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:text="스타벅스 안암역점"
+                        android:textSize="16sp"
+                        android:textColor="#0000A0"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_margin="4dp"
+                        android:text="커피전문점"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+
+                <Button
+                    android:textSize="12dp"
+                    android:textColor="#0000A0"
+                    android:background="@drawable/bg_button"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:text="상세보기"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/layout_border"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" >
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:background="#C0C0C0"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp" />
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:text="스타벅스 고대점"
+                        android:textSize="16sp"
+                        android:textColor="#0000A0"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_margin="4dp"
+                        android:text="커피전문점"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+
+                <Button
+                    android:textSize="12dp"
+                    android:textColor="#0000A0"
+                    android:background="@drawable/bg_button"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:text="상세보기"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/layout_border"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" >
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:background="#C0C0C0"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp" />
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:text="스타벅스 한성대입구역점"
+                        android:textSize="16sp"
+                        android:textColor="#0000A0"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_margin="4dp"
+                        android:text="커피전문점"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+
+                <Button
+                    android:textSize="12dp"
+                    android:textColor="#0000A0"
+                    android:background="@drawable/bg_button"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:text="상세보기"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/layout_border"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" >
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:background="#C0C0C0"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp" />
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:text="스타벅스 혜화역점"
+                        android:textSize="16sp"
+                        android:textColor="#0000A0"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_margin="4dp"
+                        android:text="커피전문점"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+
+                <Button
+                    android:textSize="12dp"
+                    android:textColor="#0000A0"
+                    android:background="@drawable/bg_button"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:text="상세보기"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/layout_border"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" >
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:background="#C0C0C0"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp" />
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:text="스타벅스 마로니에공원점"
+                        android:textSize="16sp"
+                        android:textColor="#0000A0"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_margin="4dp"
+                        android:text="커피전문점"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+
+                <Button
+                    android:textSize="12dp"
+                    android:textColor="#0000A0"
+                    android:background="@drawable/bg_button"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:text="상세보기"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <!-- end of cafe list -->
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

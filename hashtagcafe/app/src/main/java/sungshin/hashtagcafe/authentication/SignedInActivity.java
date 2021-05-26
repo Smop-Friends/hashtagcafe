@@ -5,6 +5,7 @@ import sungshin.hashtagcafe.map;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -65,6 +66,12 @@ public class SignedInActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(intent);
             }
         });
+
+        ConstraintLayout profilelayout = findViewById(R.id.profilelayout);
+        profilelayout.setVisibility(View.GONE);
+        ConstraintLayout idp_token_layout = findViewById(R.id.idp_token_layout);
+        idp_token_layout.setVisibility(View.GONE);
+
     }
 
 

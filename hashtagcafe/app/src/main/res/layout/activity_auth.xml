@@ -4,49 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".authentication.AuthActivity">
-
-    <ImageView
-        android:id="@+id/topimg"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="20dp"
-        android:src="@mipmap/ic_launcher"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        />
-
-    <TextView
-        android:id="@+id/titletxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:text="Firebase Authentication"
-        app:layout_constraintTop_toBottomOf="@id/topimg"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+    tools:context=".authentication.AuthActivity"
+    android:background="@color/cafe_yellow">
 
     <Button
-        android:id ="@+id/firebaseui"
-        android:layout_width="match_parent"
+        android:id="@+id/firebaseui"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="로그인"
-        app:layout_constraintTop_toBottomOf="@+id/titletxt"
+        android:drawablePadding="4dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:background="@drawable/btn_darkbackground"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/firebasesignout"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="로그아웃"
+        android:drawablePadding="4dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:background="@drawable/btn_darkbackground"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/firebaseui"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
@@ -57,7 +44,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="16dp"
-        android:text="GO TO MAP \n첫화면으로"
+        android:text="시작하기"
+        android:drawablePadding="4dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:background="@drawable/btn_darkbackground"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/firebasesignout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>

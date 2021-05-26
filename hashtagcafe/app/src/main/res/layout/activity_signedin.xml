@@ -4,62 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".authentication.SignedInActivity">
-
-    <ImageView
-        android:id="@+id/topimg"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@mipmap/ic_launcher"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <TextView
-        android:id="@+id/toptxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="You are signed in!"
-        app:layout_constraintTop_toBottomOf="@+id/topimg"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <Button
-        android:id="@+id/sign_out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"
-        android:text="Sign out"
-        app:layout_constraintTop_toBottomOf="@+id/toptxt"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-
-    <Button
-        android:id="@+id/delete_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"
-        android:text="Delete account"
-        app:layout_constraintTop_toBottomOf="@+id/toptxt"
-        app:layout_constraintLeft_toRightOf="@+id/sign_out"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <TextView
-        android:id="@+id/userprofile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User profile:"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_out"/>
+    tools:context=".authentication.SignedInActivity"
+    android:background="@color/cafe_yellow">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/profilelayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/userprofile">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/user_profile_picture"
@@ -123,19 +75,71 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toMap_layout"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:layout_constraintTop_toBottomOf="@+id/idp_token_layout">
-        <Button
-            android:id="@+id/toMapBtn"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/profilelayout">
+
+        <TextView
+            android:id="@+id/tvSignedIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="로그인 완료"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/sign_out"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="로그아웃"
+            android:drawablePadding="4dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:background="@drawable/btn_darkbackground"
+            android:textColor="@color/white"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/toMapBtn"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/delete_account"
+            app:layout_constraintTop_toBottomOf="@+id/tvSignedIn" />
+
+        <Button
+            android:id="@+id/delete_account"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="16dp"
-            android:text="GO TO MAP \n첫화면으로"
+            android:text="계정 삭제"
+            android:drawablePadding="4dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:background="@drawable/btn_darkbackground"
+            android:textColor="@color/white"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/toMapBtn"
+            app:layout_constraintLeft_toRightOf="@+id/sign_out"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSignedIn" />
+
+        <Button
+            android:id="@+id/toMapBtn"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:text="시작하기"
+            android:drawablePadding="4dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:background="@drawable/btn_darkbackground"
+            android:textColor="@color/white"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvSignedIn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

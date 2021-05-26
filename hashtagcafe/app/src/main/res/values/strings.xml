@@ -10,20 +10,35 @@
 
     <!-- jenny -->
     <string-array name="hashtag_list">
-        <item>24시간</item>
-        <item>콘센트</item>
+        <item>QR체크 여부</item>
+        <item>출입 명부 작성</item>
+        <item>수시 환기</item>
+        <item>체온체크</item>
+        <item>매장 소독</item>
+        <item>테이블 5개 미만</item>
+        <item>테이블 10개 이상</item>
+        <item>스터디 좌석 마련</item>
+        <item>대형테이블(5인좌석 이상)</item>
+        <item>포토존 마련</item>
+        <item>콘센트 자리 많음</item>
         <item>루프탑</item>
-        <item>야외</item>
-        <item>스터디</item>
-        <item>코로나 방역</item>
-        <item>브런치</item>
-        <item>SNS</item>
-        <item>지하철역 근처</item>
-        <item>반려동물 가능</item>
-        <item>청결</item>
-        <item>환경적인 포장용기</item>
-        <item>오픈 8시 이전</item>
-        <item>단체</item>
+        <item>야외 좌석</item>
+        <item>24시 운영</item>
+        <item>지하철역 부근</item>
+        <item>반려동물 동반 가능</item>
+        <item>오전8시 이전 오픈</item>
+        <item>친환경 용기 사용</item>
+        <item>배달 가능</item>
+        <item>개인카페</item>
+        <item>프랜차이즈 카페</item>
+        <item>브런치 카페</item>
+        <item>주류 판매</item>
+        <item>생과일 주스 판매</item>
+        <item>디저트 판매</item>
+        <item>전문 바리스타</item>
+        <item>디카페인 메뉴</item>
+        <item>우유 선택 가능</item>
+        <item>비건 메뉴</item>
     </string-array>
 
 </resources>

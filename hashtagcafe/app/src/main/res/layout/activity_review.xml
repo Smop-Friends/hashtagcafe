@@ -6,102 +6,157 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+    android:background="@color/cafe_yellow"
     tools:context=".review_main">
-
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="315dp"
-        android:layout_height="141dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/blackline"
-        android:ems="10"
-        android:gravity="top"
-        android:hint="리뷰를 작성해 주세요."
-        android:padding="10dp"
-        android:inputType="textMultiLine|textNoSuggestions"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
-        app:layout_constraintVertical_bias="0.0" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="94dp"
-        android:orientation="horizontal"
-        android:layout_marginBottom="50dp"
-        >
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
 
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="리뷰 작성하기"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:layout_margin="20dp"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:layout_weight="3"
+            />
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="5dp"
-            >
+            android:padding="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/border_layout">
 
-            <TextView
-                android:id="@+id/textView"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="사진추가"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="별점"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
+                    android:gravity="center|left"
+
+                    android:textSize="25dp" />
+                <RatingBar
+                    android:id="@+id/profileRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/edtReview"
+                android:layout_width="340dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/edit_round"
+                android:ems="10"
+                android:gravity="top"
+                android:hint="리뷰를 작성해 주세요."
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:padding="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.134"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.524" />
+                app:layout_constraintTop_toBottomOf="@+id/profileRatingBar"
+                app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/picCount"
+            <MultiAutoCompleteTextView
+                android:id="@+id/searchText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0/3"
-                android:textAlignment="center"
-                android:gravity="center_horizontal" />
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/srchbarborder"
+                android:hint="# 태그"
+                android:paddingLeft="20dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageButton
-                android:id="@+id/picAddBtn"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="80dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/profileHashtag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="사진추가"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.134"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.524" />
+
+                    <TextView
+                        android:id="@+id/picCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="0/4"
+                        android:textAlignment="center" />
+
+                    <ImageButton
+                        android:id="@+id/picAddBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_round"
+                        android:src="@drawable/add" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/recyclerview_main_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="67dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@android:drawable/ic_menu_add" />
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="19sp"
+                android:background="@drawable/btn_darkbackground"
+                android:text="확인" />
+
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_main_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
     </LinearLayout>
-
-    <MultiAutoCompleteTextView
-        android:id="@+id/SearchText"
-        android:layout_width="215dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="100dp"
-        android:hint="# 태그"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="67dp"
-        android:layout_height="wrap_content"
-        android:text="확인" />
-
 </LinearLayout>

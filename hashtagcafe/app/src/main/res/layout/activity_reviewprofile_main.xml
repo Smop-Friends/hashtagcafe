@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cafe_yellow"
+
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/border_layout"
+        android:layout_margin="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/sungshin"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/profileCafeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="보라 수정구" />
+
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="348dp"
+            android:layout_height="275dp"
+            android:layout_marginBottom="20dp"
+            tools:context=".MainActivity">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/sliderViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/layoutIndicators"
+                android:layout_width="363dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sliderViewPager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RatingBar
+            android:id="@+id/profileRatingBar"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:layout_marginRight="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/profileHashtag"
+            android:layout_marginTop="10dp"
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="#편안한 #아늑한 #행복한" />
+
+        <TextView
+            android:id="@+id/profileReview"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_round"
+            android:padding="20dp"
+            android:textSize="15dp"
+            android:text="분위기 좋고 너무 맛있어요~" />
+
+        <ImageButton
+            android:id="@+id/reviewDeclaration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            app:srcCompat="@drawable/reportbtn3" />
+    </LinearLayout>
+
+
+</LinearLayout>

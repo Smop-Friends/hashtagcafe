@@ -10,6 +10,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import sungshin.hashtagcafe.R;
+import sungshin.hashtagcafe.cloudStorage.CloudStorageActivity;
 import sungshin.hashtagcafe.map;
 
 import com.firebase.ui.auth.AuthUI;
@@ -18,6 +19,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 import android.content.DialogInterface;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AlertDialog;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,7 +41,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
         if (user != null)
         {
             // 인증이 되어 있는 상태
-            firebaseuibtn.setEnabled(false);
+            //firebaseuibtn.setEnabled(false);
             firebasesignout.setEnabled(true);
         }
         else
@@ -59,7 +62,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     AlertDialog.Builder builder = new AlertDialog.Builder(AuthActivity.this);
                     builder.setTitle("경고");
-                    builder.setMessage("사용자 인증이 되지 않았습니다. Firebase 인증에서 로그인 후 사용하세요.");
+                    builder.setMessage("사용자 인증이 되지 않았습니다. 로그인 후 사용하세요.");
                     builder.setPositiveButton("확인", new DialogInterface.OnClickListener()
                     {
                         public void onClick(DialogInterface dialog, int which)
@@ -80,12 +83,21 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view){
         switch (view.getId()){
             case R.id.firebaseui:
-                Intent i = new Intent(this, FirebaseUIActivity.class);
-                startActivity(i);
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                if (user != null)
+                {
+                    // 인증이 되어 있는 상태
+                    Toast.makeText (getApplicationContext(),"로그인 상태입니다. \n [시작하기]를 눌러주세요!",Toast.LENGTH_LONG).show( );
+                }
+                else {
+                    Intent i = new Intent(this, FirebaseUIActivity.class);
+                    startActivity(i);
+                }
                 break;
             case R.id.firebasesignout:
                 signOut();
                 break;
+
             default:
                 break;
         }

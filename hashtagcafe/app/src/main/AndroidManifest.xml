@@ -9,13 +9,13 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_hstg"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_hstg_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hashtagcafe">
 
@@ -37,6 +37,9 @@
         <activity android:name=".map" />
         <activity android:name=".MainActivity" />
         <activity android:name=".review_main"/>
+        <activity android:name=".displayPhotoActivity"/>
+        <activity android:name=".reviewprofile_main"/>
+        <activity android:name=".cafesrch"/>
 
         <meta-data
             android:name="com.naver.maps.map.haex8ay584"
@@ -46,6 +49,10 @@
         <activity android:name=".authentication.StartAuthActivity" />
         <activity android:name=".authentication.FirebaseUIActivity" />
         <activity android:name=".authentication.AuthActivity" />
+        <activity android:name=".firestore.FirestoreActivity"></activity>
+        <activity android:name=".cloudStorage.DownloadActivity"></activity>
+        <activity android:name=".cloudStorage.UploadActivity" />
+        <activity android:name=".cloudStorage.CloudStorageActivity" />
     </application>
 
 </manifest>

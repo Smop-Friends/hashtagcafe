@@ -1,103 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFF5EA"
+    android:background="@color/cafe_yellow"
+    android:fitsSystemWindows="true"
+    android:id="@+id/drawer_layout"
     tools:context=".map">
 
-    <!--상단바-->
+    <!--안쪽 화면-->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-        <!--로고-->
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:padding="5sp"
-            app:srcCompat="@drawable/slogo" />
-        <!--검색창-->
-        <MultiAutoCompleteTextView
-            android:id="@+id/multiAutoCompleteTextView"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="18"
-            android:paddingLeft="15dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/srchbarborder"
-            android:text="MultiAuto" />
-        <!--검색-->
-        <ImageButton
-            android:id="@+id/imageButton5"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:padding="5sp"
-            android:scaleType="centerCrop"
-            style="?android:borderlessButtonStyle"
-            app:srcCompat="@drawable/srch" />
-        <!--찜-->
-        <ImageButton
-            android:id="@+id/imageButton6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:padding="5sp"
-            android:scaleType="centerCrop"
-            style="?android:borderlessButtonStyle"
-            app:srcCompat="@drawable/jjimnb" />
-
-    </LinearLayout>
-    <!-- 임시버튼 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:gravity="center">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:id="@+id/ha"
-            android:text="예진"/>
-
-        <!-- jenny -->
-        <Button
-            android:id="@+id/BtnExplore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/explore"
-            android:layout_gravity="center"
-            android:layout_margin="16dp"
-            android:background="@drawable/bg_button"
-            android:textColor="#0000A0"
-            android:textSize="12sp"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:id="@+id/kang"
-            android:text="민지"/>
-    </LinearLayout>
-    <!--메인화면-->
-    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cafe_yellow"
         android:orientation="vertical">
-        <!--네이버 지도--><!--여기 높이 수정했음 -임시버튼(예진)-->
-        <fragment android:layout_width="match_parent"
-            android:layout_height="500dp"
+
+        <!--상단바-->
+        <androidx.appcompat.widget.Toolbar
+            android:layout_gravity="top|center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!--로고-->
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/slogo" />
+                <!--검색창-->
+                <EditText
+                    android:id="@+id/srchtext"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="18"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/srchbarborder"
+                    android:text=""
+                    android:singleLine="true"
+                    android:scrollHorizontally="true" />
+                <!--검색-->
+                <ImageButton
+                    android:id="@+id/srchbtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:padding="5sp"
+                    android:scaleType="centerCrop"
+                    style="?android:borderlessButtonStyle"
+                    app:srcCompat="@drawable/srch" />
+                <!--메뉴-->
+                <ImageButton
+                    android:id="@+id/drawerButton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:padding="5sp"
+                    android:scaleType="centerCrop"
+                    style="?android:borderlessButtonStyle"
+                    app:srcCompat="@drawable/bar" />
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- 임시버튼 -->
+        <LinearLayout
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/ha"
+                android:text="예진"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/kang"
+                android:text="민지"/>
+
+            <Button
+                android:id="@+id/dbdbdb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Button" />
+        </LinearLayout>
+        <!--메인화면-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_margin="20dp"
-            android:id="@+id/map"
-            android:name="com.naver.maps.map.MapFragment" />
+            android:background="@drawable/btn_darkbackground"
+            >
+            <!--네이버 지도--><!--여기 높이 수정했음 -임시버튼(예진)-->
+            <fragment android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_margin="3dp"
+                android:id="@+id/map"
+                android:name="com.naver.maps.map.MapFragment" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
+    <include layout="@layout/activity_drawer"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

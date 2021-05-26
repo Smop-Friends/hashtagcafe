@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
@@ -107,7 +109,8 @@ public class FirebaseUIActivity extends AppCompatActivity implements View.OnClic
     private int getSelectedLogo()
     {
         //return AuthUI.NO_LOGO;
-        return R.mipmap.ic_launcher;
+        //return R.mipmap.ic_launcher;
+        return R.mipmap.ic_hstg;
     }
 
     /**

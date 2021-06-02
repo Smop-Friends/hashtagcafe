@@ -32,6 +32,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.ArrayList;
+
 import sungshin.hashtagcafe.firestore.ReviewInfo;
 
 public class reviewprofile_main extends AppCompatActivity {
@@ -40,8 +42,10 @@ public class reviewprofile_main extends AppCompatActivity {
     private LinearLayout layoutIndicator;
     int i = 0;
 
-    private String[] images = new String[4];
+    //private String[] images = new String[4];
+    private ArrayList<String> images = new ArrayList<>();
     String myUserID , myCafeName;
+    int myImgCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +55,9 @@ public class reviewprofile_main extends AppCompatActivity {
         Intent intent = getIntent();
         myUserID = intent.getStringExtra("userID");
         TextView profileCafeName = (TextView)findViewById(R.id.profileCafeName);
-        profileCafeName.setText(myUserID);
         myCafeName = intent.getStringExtra("cafename");
+        profileCafeName.setText(myCafeName);
+        myImgCount = intent.getIntExtra("imgCount",0);
 
         //리뷰 신고
         final ImageButton button1 = (ImageButton) findViewById(R.id.reviewDeclaration);
@@ -97,7 +102,7 @@ public class reviewprofile_main extends AppCompatActivity {
             }
         });
 
-        setupIndicators(images.length); //이미지의 갯수를 만큼 ImageView를 생성하여, LinearLayout에 addView()를 통해 추가합니다.
+        setupIndicators(myImgCount);; //이미지의 갯수를 만큼 ImageView를 생성하여, LinearLayout에 addView()를 통해 추가합니다.
         selectWhereDoc();
 
     }
@@ -107,6 +112,7 @@ public class reviewprofile_main extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("review")
                 .whereEqualTo("userid", myUserID)
+                .whereEqualTo("cafeName",myCafeName)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -151,9 +157,9 @@ public class reviewprofile_main extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Uri> task) {
                                     if (task.isSuccessful()) {
-                                        images[i] = task.getResult().toString();
+                                        images.add(task.getResult().toString());
                                         sliderViewPager.getAdapter().notifyDataSetChanged();
-                                        System.out.println(i + images[i]);
+                                       // System.out.println(i + images[i]);
                                         i++;
                                     } else {
                                         // URL을 가져오지 못하면 토스트 메세지

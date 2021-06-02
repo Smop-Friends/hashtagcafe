@@ -33,7 +33,7 @@
             android:layout_alignParentLeft="true"
             android:adjustViewBounds="true"
             app:srcCompat="@drawable/subtitleimg" />
-        <LinearLayout
+      <!--  <LinearLayout
             android:id="@+id/partition1"
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -53,12 +53,12 @@
             android:layout_below="@+id/partition1"
             android:layout_alignParentLeft="true"
             android:gravity="center_horizontal"
-            tools:ignore="RtlCompat" />
+            tools:ignore="RtlCompat" /> -->
         <LinearLayout
             android:id="@+id/partition2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@+id/writeReview"
+            android:layout_below="@+id/subtitle"
             android:layout_marginTop="20dp"
             android:background="#968C83"
             android:orientation="vertical" />

@@ -136,14 +136,14 @@ public class map extends AppCompatActivity implements OnMapReadyCallback, Overla
         locationSource =
                 new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
 
-        menu1 = (TextView) findViewById(R.id.writeReview);
+       /* menu1 = (TextView) findViewById(R.id.writeReview);
         menu1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(), review_main.class);
                 startActivity(intent);
             }
-        });
+        }); */
 
         menu3 = (TextView) findViewById(R.id.addstore);
         menu3.setOnClickListener(new View.OnClickListener(){
@@ -315,7 +315,8 @@ public class map extends AppCompatActivity implements OnMapReadyCallback, Overla
     public void onMapReady(@NonNull NaverMap naverMap) {
         this.naverMap = naverMap;
         naverMap.setLocationSource(locationSource);
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE );
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE );
         //이 아래는 권한확인. onRequestPermissionResult 콜백 메소드 호출
         //ActivityCompat.requestPermissisons(this, PERMISSIONS, PERMISSION_REQUEST_CODE);
         Log.v("태그","onMapReady");

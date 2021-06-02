@@ -28,7 +28,7 @@ public class storeInfo_reviewlistAdapter extends RecyclerView.Adapter<storeInfo_
 
         public CustomViewHolder(View view) {
             super(view);
-            this.cafeimage = (ImageView) view.findViewById(R.id.cafeimage);
+            // this.cafeimage = (ImageView) view.findViewById(R.id.cafeimage);
             this.hashtag = (TextView) view.findViewById(R.id.hashtag);
             this.ratingstar = (RatingBar) view.findViewById(R.id.ratingstar);
             this.review = (TextView) view.findViewById(R.id.review);
@@ -57,7 +57,7 @@ public class storeInfo_reviewlistAdapter extends RecyclerView.Adapter<storeInfo_
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder viewholder, int position) {  //position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시.
 
-        viewholder.cafeimage.setImageResource(mList.get(position).getCafeimage());
+        // viewholder.cafeimage.setImageResource(mList.get(position).getCafeimage());
         viewholder.hashtag.setText(mList.get(position).getHashtag());
         viewholder.ratingstar.setRating(mList.get(position).getRating());
         viewholder.review.setText(mList.get(position).getReview());
@@ -67,10 +67,12 @@ public class storeInfo_reviewlistAdapter extends RecyclerView.Adapter<storeInfo_
             public void onClick(View v) {
                 String id = mList.get(position).userID;
                 String cafename = mList.get(position).getCafeName();
+                int imgCount = mList.get(position).getImgCount();
 
                 Intent intent = new Intent(mContext, reviewprofile_main.class);
                 intent.putExtra("userID",id);
                 intent.putExtra("cafename",cafename);
+                intent.putExtra("imgCount",imgCount);
                 mContext.startActivity(intent);
             }
         });

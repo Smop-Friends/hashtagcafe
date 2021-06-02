@@ -6,6 +6,7 @@ public class ReviewInfo {
     private int rating;
     private String reviewTxt;
     private String userid;
+    private int imgCount;
 
 
     public String getCafeName(){ return cafeName; }
@@ -19,6 +20,7 @@ public class ReviewInfo {
         return reviewTxt;
     }
     public String getUserid(){ return userid; }
+    public int getImgCount(){ return imgCount; }
 
 
 }

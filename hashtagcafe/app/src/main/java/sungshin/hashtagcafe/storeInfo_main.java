@@ -35,6 +35,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -89,6 +91,9 @@ public class storeInfo_main extends AppCompatActivity implements OnMapReadyCallb
     ArrayList<storeInfo_reviewlist> dataList = new ArrayList<>();
     final storeInfo_reviewlistAdapter adapter = new storeInfo_reviewlistAdapter(this,dataList);
     int cafe = R.drawable.coffeegood;
+    String userID;
+    Intent intent5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -166,18 +171,19 @@ public class storeInfo_main extends AppCompatActivity implements OnMapReadyCallb
         else if(data3==null)
             Log.i("카페","데이터3 null임");
 
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        final FirebaseUser user = mAuth.getCurrentUser();
+        userID = user.getUid();
         //민지언니 페이지로 이동+ 카페이름 넘김
         Button addReview=(Button)findViewById(R.id.addReview);
         addReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), review_main.class);
-                intent.putExtra("cafename", cafeNameInfo.getText().toString());
+                intent5 = new Intent(getApplicationContext(), review_main.class);
+                intent5.putExtra("cafename", cafeNameInfo.getText().toString());
                 Log.i("리뷰로 넘김", cafeNameInfo.getText().toString());
-                startActivity(intent);
-                finish();
-
+                selectWhereDoc2(data2);
             }
         });
         //selectWhereDoc(data2);
@@ -383,7 +389,7 @@ public class storeInfo_main extends AppCompatActivity implements OnMapReadyCallb
                                 //Uri uri;
                                 //Log.d("review", document.getId() + " => " + document.getData()+i);
                                 dataList.add(new storeInfo_reviewlist(cafe,reviewInfo.getHashtags(),reviewcafeRating, reviewInfo.getReviewTxt(),
-                                        reviewInfo.getCafeName(), reviewInfo.getUserid()));
+                                        reviewInfo.getCafeName(), reviewInfo.getUserid(),reviewInfo.getImgCount()));
                             }
                             adapter.notifyDataSetChanged();
                         } else {
@@ -393,6 +399,37 @@ public class storeInfo_main extends AppCompatActivity implements OnMapReadyCallb
 
                 });
     }
+
+    private void selectWhereDoc2(String n)
+    {
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference listRef = storage.getReference().child("storage/"+n);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("review")
+                .whereEqualTo("cafeName", n)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                ReviewInfo reviewInfo = document.toObject(ReviewInfo.class);
+                                if(reviewInfo.getUserid().equals(userID)){
+                                    Toast.makeText(getApplicationContext(),"리뷰는 한번만 작성할 수 있습니다.",Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+                            }
+                            startActivity(intent5);
+                        } else {
+                            Log.d("review", "Error getting documents: ", task.getException());
+                        }
+                    }
+
+                });
+    }
+
+
 
     private void showAllDocTxt(){ //데베읽어서 출력하기 함수
         FirebaseFirestore db = FirebaseFirestore.getInstance();

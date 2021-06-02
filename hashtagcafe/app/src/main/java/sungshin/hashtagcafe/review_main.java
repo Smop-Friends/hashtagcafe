@@ -5,6 +5,7 @@ import android.content.ClipData;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -62,16 +63,23 @@ public class review_main extends AppCompatActivity {
 
     ArrayList<String> mImgPathList = new ArrayList<>();
     private String mImgPath = null;
+    private String mImgTitle = null;
+    private String mImgOrient = null;
+
     String newFolderName;
     String userID;
     String data3;
 
     String cafeName2;
+
+    int message;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
 
+        review_photo.picCount = 0;
 
         Intent intent3 = getIntent();
         data3=intent3.getStringExtra("cafename");//From yejin
@@ -90,7 +98,16 @@ public class review_main extends AppCompatActivity {
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_PICK);
+                Intent intent = null;
+                if(Build.VERSION.SDK_INT >= 19)
+                {
+                    intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                }
+                else
+                {
+                    intent = new Intent(Intent.ACTION_GET_CONTENT);
+                }
+               // Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
                 intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
                 startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_MULTIPLE);
@@ -132,6 +149,10 @@ public class review_main extends AppCompatActivity {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         final FirebaseUser user = mAuth.getCurrentUser();
         userID = user.getUid();
+    }
+
+    private Uri getURLForResource(int resId) {
+        return Uri.parse("android.resource://" + R.class.getPackage().getName() + "/" + resId);
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -183,6 +204,7 @@ public class review_main extends AppCompatActivity {
         newReview.put("reviewTxt", edtReview.getText().toString());
         newReview.put("rating", ratingBar.getRating());
         newReview.put("hashtags", searchText.getText().toString());
+        newReview.put("imgCount", mImgPathList.size());
 
         db.collection("review")
                 .add(newReview)
@@ -203,7 +225,7 @@ public class review_main extends AppCompatActivity {
                     }
                 });
     }
-
+    //mImgPathList.add(mImgPath);
     private void getImageNameToUri(Uri data)
     {
         String[] proj =
@@ -217,26 +239,36 @@ public class review_main extends AppCompatActivity {
         cursor.moveToFirst();
 
         int column_data = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        int column_title = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.TITLE);
+        int column_orientation = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.ORIENTATION);
+
         mImgPath = cursor.getString(column_data);
+        mImgTitle = cursor.getString(column_title);
+        mImgOrient = cursor.getString(column_orientation);
+
         Log.d("cafe", "mImgPath = " + mImgPath);
+        Log.d("cafe", "mImgTitle = " + mImgTitle);
+        Log.d("cafe", "mImgOrient = " + mImgOrient);
+
         mImgPathList.add(mImgPath);
     }
 
+
     private void uploadFile(String aFilePath)
     {
-        newFolderName = data3;
         Uri file = Uri.fromFile(new File(aFilePath));
         StorageMetadata metadata = new StorageMetadata.Builder()
                 .setContentType("image/jpeg")
                 .build();
 
+        newFolderName = data3;
         // 참조 만들기 및 파일 업로드
         FirebaseStorage storage = FirebaseStorage.getInstance();
 
         // Create a storage reference from our app
         StorageReference storageRef = storage.getReference();
         //UploadTask uploadTask = storageRef.child("storage/"+file.getLastPathSegment()).putFile(file, metadata);
-        UploadTask uploadTask = storageRef.child("storage/"+newFolderName+"/"+"review/"+file.getLastPathSegment()).putFile(file, metadata);
+        UploadTask uploadTask = storageRef.child("storage/"+newFolderName+"/review/"+userID+"/"+file.getLastPathSegment()).putFile(file, metadata);
         //Log.d("cafe", newFolderName);
 
 
@@ -247,7 +279,7 @@ public class review_main extends AppCompatActivity {
             public void onProgress(UploadTask.TaskSnapshot taskSnapshot)
             {
                 double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-                Toast.makeText(review_main.this, "Upload is " + progress + "% done", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(review_main.this, "Upload is " + progress + "% done", Toast.LENGTH_SHORT).show();
             }
         }).addOnPausedListener(new OnPausedListener<UploadTask.TaskSnapshot>()
         {

@@ -11,11 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+
 public class reviewprofile_ImageSliderAdapter extends RecyclerView.Adapter<reviewprofile_ImageSliderAdapter.MyViewHolder> {
     private Context context;
-    private String[] sliderImage;
+    private ArrayList<String> sliderImage;
 
-    public reviewprofile_ImageSliderAdapter(Context context, String[] sliderImage) {
+    public reviewprofile_ImageSliderAdapter(Context context, ArrayList<String> sliderImage) {
         this.context = context;
         this.sliderImage = sliderImage;
     }
@@ -30,12 +32,12 @@ public class reviewprofile_ImageSliderAdapter extends RecyclerView.Adapter<revie
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) { //position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시.
-        holder.bindSliderImage(sliderImage[position]);
+        holder.bindSliderImage(sliderImage.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return sliderImage.length;
+        return sliderImage.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {  //아이템 뷰를 저장하는 뷰홀더 클래스.

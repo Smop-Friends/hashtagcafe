@@ -114,8 +114,8 @@ public class SignedInActivity extends AppCompatActivity implements View.OnClickL
     private void deleteAccountClicked()
     {
         AlertDialog dialog = new AlertDialog.Builder(this)
-                .setMessage("Are you sure you want to delete this account?")
-                .setPositiveButton("Yes, nuke it!", new DialogInterface.OnClickListener()
+                .setMessage("계정 삭제를 진행하시겠습니까?")
+                .setPositiveButton("네", new DialogInterface.OnClickListener()
                 {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i)
@@ -123,7 +123,7 @@ public class SignedInActivity extends AppCompatActivity implements View.OnClickL
                         deleteAccount();
                     }
                 })
-                .setNegativeButton("No", null)
+                .setNegativeButton("아니요", null)
                 .create();
 
         dialog.show();
@@ -177,14 +177,6 @@ public class SignedInActivity extends AppCompatActivity implements View.OnClickL
                 if (GoogleAuthProvider.PROVIDER_ID.equals(providerId))
                 {
                     providerList.append("Google");
-                }
-                else if (FacebookAuthProvider.PROVIDER_ID.equals(providerId))
-                {
-                    providerList.append("Facebook");
-                }
-                else if(TwitterAuthProvider.PROVIDER_ID.equals(providerId))
-                {
-                    providerList.append("Twitter");
                 }
                 else if (EmailAuthProvider.PROVIDER_ID.equals(providerId))
                 {

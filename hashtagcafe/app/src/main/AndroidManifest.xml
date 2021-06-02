@@ -14,11 +14,15 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_hstg"
-        android:label="@string/app_name"
+        android:label="#카페"
         android:roundIcon="@mipmap/ic_hstg_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hashtagcafe">
 
+        <activity android:name=".MainActivity"
+            android:label="#카페" >
+
+        </activity>
         <!-- jenny -->
         <activity
             android:name=".TagSearchList"
@@ -35,7 +39,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".map" />
-        <activity android:name=".MainActivity" />
+
         <activity android:name=".review_main"/>
         <activity android:name=".displayPhotoActivity"/>
         <activity android:name=".reviewprofile_main"/>

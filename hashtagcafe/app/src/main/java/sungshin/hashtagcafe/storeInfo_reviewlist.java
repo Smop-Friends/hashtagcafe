@@ -1,13 +1,23 @@
 package sungshin.hashtagcafe;
 
+import android.net.Uri;
+
 public class storeInfo_reviewlist {
     private int cafeimage;
-    //private Uri cafeimage;
     private String hashtag;
     private int rating;
     private String review;
     String cafeName;
     public String userID;
+    public int imgCount;
+
+    public int getImgCount() {
+        return imgCount;
+    }
+
+    public void setImgCount(int imgCount) {
+        this.imgCount = imgCount;
+    }
 
     public String getUserID() {
         return userID;
@@ -57,12 +67,13 @@ public class storeInfo_reviewlist {
         this.cafeName = cafeName;
     }
 
-    public storeInfo_reviewlist( int cafeimage, String hashtag, int rating, String review,String cafeName, String userID) {
+    public storeInfo_reviewlist(int cafeimage, String hashtag, int rating, String review,String cafeName, String userID, int imgCount) {
         this.cafeimage = cafeimage;
         this.hashtag = hashtag;
         this.rating = rating;
         this.review = review;
         this.cafeName = cafeName;
         this.userID = userID;
+        this.imgCount = imgCount;
     }
 }

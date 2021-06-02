@@ -1,47 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
     android:background="?attr/selectableItemBackground"
     >
 
-    <ImageView
-        android:id="@+id/cafeimage"
-        android:layout_width="80dp"
+    <!-- <ImageView
+         android:id="@+id/cafeimage"
+         android:layout_width="80dp"
 
-        android:layout_height="80dp" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="90dp"
-    android:orientation="vertical"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp">
-
-    <TextView
-        android:id="@+id/hashtag"
+         android:layout_height="80dp" /> -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="#인테리어맛집#조각케이크"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <RatingBar
-        android:id="@+id/ratingstar"
-        style="?android:attr/ratingBarStyleSmall"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp" />
-
-    <TextView
-        android:id="@+id/review"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90dp"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
         android:layout_margin="10dp"
-        android:text="매장이 크고 좋아요" />
-</LinearLayout>
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:id="@+id/hashtag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="#인테리어맛집#조각케이크"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <RatingBar
+            android:id="@+id/ratingstar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/review"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="매장이 크고 좋아요" />
+    </LinearLayout>
 
 </LinearLayout>
